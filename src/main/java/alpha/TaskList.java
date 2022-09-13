@@ -32,11 +32,26 @@ public class TaskList {
     }
 
     /**
-     * Returns the list of tasks in the task list.
-     * @return List of tasks.
+     * Returns the list of tasks.
+     *
+     * @param uI Object of the Ui class to display the tasks.
+     * @return A string containing a list of tasks.
      */
-    public List<Task> getTaskList() {
-        return this.tasks;
+    public String printTasks(Ui uI) {
+        if (tasks.isEmpty()) {
+            return uI.returnText(">> " + "Your task list is empty!");
+        } else {
+            String tasksToBePrinted = "";
+            tasksToBePrinted += uI.returnText(">> "
+                    + "Your task list is as follows:\n");
+            int count = 1;
+            for (Task task : tasks) {
+                tasksToBePrinted += uI.returnText(count + ") "
+                        + task.toString() + "\n");
+                count++;
+            }
+            return tasksToBePrinted;
+        }
     }
 
     /**

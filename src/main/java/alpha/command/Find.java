@@ -31,6 +31,6 @@ public class Find extends Command {
     @Override
     public String execute(TaskList taskList, Ui uI, FileOperations fileOperations) throws AlphaException {
         TaskList filteredTasks = (new TaskList(taskList.filterTaskDescription(keyword)));
-        return uI.generateTaskListToBePrinted(filteredTasks);
+        return filteredTasks.printTasks(uI);
     }
 }

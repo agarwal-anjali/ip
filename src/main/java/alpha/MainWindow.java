@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-
 /**
  * Controller for MainWindow. Provides the layout for the other controls.
  */
@@ -25,14 +24,10 @@ public class MainWindow extends AnchorPane {
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/User.png"));
     private Image alphaImage = new Image(this.getClass().getResourceAsStream("/images/Squid.png"));
 
-    /**
-     * Initialises the messages.
-     */
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
-        String welcomeMessage = "Welcome onboard!\nI am Alpha, your task manager!"
-                + "\n(enter help to learn about the command rules)";
+        String welcomeMessage = "Welcome onboard!\nI am Alpha, your task manager!\n(enter help to learn about the command rules)";
         dialogContainer.getChildren().addAll(
                 DialogBox.getDukeDialog(welcomeMessage, alphaImage)
         );
@@ -54,6 +49,9 @@ public class MainWindow extends AnchorPane {
                 DialogBox.getUserDialog(input, userImage),
                 DialogBox.getDukeDialog(response, alphaImage)
         );
+//        if (response.equals(">> Bye, see you soon!")) {
+//            System.exit(0);
+//        }
         userInput.clear();
     }
 }
