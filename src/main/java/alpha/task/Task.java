@@ -65,6 +65,10 @@ public abstract class Task {
         return this.taskType;
     }
 
+    /**
+     * Returns the tag of the task.
+     * @return Tag of the task.
+     */
     public String getTag() {
         return this.tag;
     }
@@ -78,6 +82,10 @@ public abstract class Task {
         this.status = status;
     }
 
+    /**
+     * Adds a tag to the task.
+     * @param tag Tag to be added to the task.
+     */
     public void addTag(String tag) {
         this.tag = tag;
     }

@@ -12,7 +12,9 @@ import javafx.stage.Stage;
  * A GUI for Duke using FXML.
  */
 public class Main extends Application {
-
+    /**
+     * Object of Alpha class to interpret messages and generate response.
+     */
     private Alpha alpha = new Alpha();
 
     @Override

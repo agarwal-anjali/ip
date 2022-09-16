@@ -38,6 +38,10 @@ public class MainWindow extends AnchorPane {
         );
     }
 
+    /**
+     * Set alpha object to interpret user input and generate response.
+     * @param a Alpha object.
+     */
     public void setAlpha(Alpha a) {
         alpha = a;
     }
